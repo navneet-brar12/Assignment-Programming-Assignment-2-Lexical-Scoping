@@ -17,19 +17,19 @@
 #(4)They don’t calculate the mean, they simply store the value of the input in a variable m.
 #(5)into the main function makeVector (setmean) and return it (getmean).
 
-makeCacheMatrix <- function(x = matrix()) {
-      m <- NULL
-      set <- function(y) {
-            x <<- y
-            m <<- NULL
-      }
-      get <- function() x
-      setinverse <- function(solve) m <<- solve
-      getinverse <- function() m
-      list(set = set, get = get,
-           setinverse = setinverse,
-           getinverse = getinverse)
-}
+makeCacheMatrix <- function(x = matrix()) {  
+      m <- NULL  
+      set <- function(y) {  
+            x <<- y  
+            m <<- NULL  
+      }  
+      get <- function() x  
+      setinverse <- function(solve) m <<- solve  
+      getinverse <- function() m  
+      list(set = set, get = get,  
+           setinverse = setinverse,  
+           getinverse = getinverse)  
+}  
 
 #Function “cacheSolve” computes the inverse of the special “matrix” (which is the input of cachemean) returned by makeCacheMatrix #above. If the inverse has already been calculated (and the matrix has not changed), then the cachesolve should retrieve the inverse #from the cache. If the inverse has not been calculated, data gets the matrix stored with makeCacheMatrix, m calculates the inverse, #and x$setmean(m) stores it in the object m in makeCacheMatrix.
 
